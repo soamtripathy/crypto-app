@@ -1,12 +1,10 @@
-import Sidenav from "../../components/Sidenav"
-
-
+import DashboardLayout from "../../components/DashboardLayout";
 const Dashboard = () => {
   return (
-    <div>
-        <Sidenav />
-    </div>
-  )
-}
+    <DashboardLayout title="Dashboard">
+      <div>How are you?</div>
+    </DashboardLayout>
+  );
+};
 
-export default Dashboard
+export default Dashboard;
