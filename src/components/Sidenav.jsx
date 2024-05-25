@@ -9,7 +9,15 @@ const Sidenav = () => {
     { icon: GrTransaction, text: "Transactions", link: "/transactions" },
   ];
   return (
-    <Stack justify="space-between" boxShadow="lg" W="16rem" h="100vh">
+    <Stack
+      justify="space-between"
+      boxShadow={{
+        base: "none",
+        lg: "lg",
+      }}
+      w={{ base: "full", lg: "16rem" }}
+      h="100vh"
+    >
       <Box>
         <Heading textAlign="center" fontSize="20px" as="h1" pt="3.5rem">
           {" "}
@@ -34,7 +42,7 @@ const Sidenav = () => {
           ))}
         </Box>
       </Box>
-      <Box mt="6" mx="3" mb= "6">
+      <Box mt="6" mx="3" mb="6">
         <HStack
           borderRadius="10px"
           mx="3"
