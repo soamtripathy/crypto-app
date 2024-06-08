@@ -15,7 +15,7 @@ import { FaBars, FaCircleUser } from "react-icons/fa6";
 
 const TopNav = ({ title, onOpen }) => {
   return (
-    <Box px="4">
+    <Box px="4" bg="white">
       <HStack maxW="70rem" mx="auto" h="16" justify="space-between">
         <Icon
           as={FaBars}
