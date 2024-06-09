@@ -41,11 +41,13 @@ const PortfolioSection = () => {
             <Text fontSize="14px">Total Portflio Value</Text>
             <Icon as={AiOutlineInfoCircle} />
           </HStack>
-          <Text textStyle="h2"> &#8377; 112,312.24</Text>
+          <Text textStyle="h2" fontWeight="medium"> &#8377; 112,312.24</Text>
         </Stack>
         <Stack>
           <HStack color="black.80">
-            <Text fontSize="14px">Wallet Balance</Text>
+            <Text fontSize="14px" >
+              Wallet Balance
+            </Text>
           </HStack>
           <HStack
             spacing={2}
@@ -59,13 +61,13 @@ const PortfolioSection = () => {
             }}
           >
             <HStack>
-              <Text textStyle="h2">
+              <Text textStyle="h2" fontWeight="medium">
                 {" "}
                 22.39401000 <Tag colorScheme="gray">BTC</Tag>
               </Text>
             </HStack>
             <HStack>
-              <Text textStyle="h2">
+              <Text textStyle="h2" fontWeight="medium">
                 {" "}
                 1,300.00 <Tag colorScheme="gray">INR</Tag>
               </Text>
