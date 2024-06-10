@@ -52,7 +52,7 @@ const PriceSection = () => {
             </HStack>
           </HStack>
         </Stack>
-        <HStack mt={3}>
+        <HStack>
           <Button leftIcon={<Icon as={AiFillPlusCircle} />}>Buy</Button>
           <Button leftIcon={<Icon as={AiFillMinusCircle} />}>Sell</Button>
         </HStack>
