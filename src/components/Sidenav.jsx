@@ -17,7 +17,7 @@ const Sidenav = () => {
         lg: "lg",
       }}
       w={{ base: "full", lg: "16rem" }}
-      h="100vh"
+      h="full"
     >
       <Box>
         <Heading textAlign="center" fontSize="20px" as="h1" pt="3.5rem">
