@@ -87,7 +87,7 @@ const TransactionTable = () => {
     cancelled: "#EB5757",
   };
   return (
-    <Box > 
+    <Box w={{ base: "100vw", md: "auto" }} overflowX="auto">
       <TableContainer>
         <Table
           variant="striped"
