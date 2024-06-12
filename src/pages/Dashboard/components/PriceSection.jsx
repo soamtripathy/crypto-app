@@ -20,7 +20,11 @@ const PriceSection = () => {
   const timeStamps = ["7:15 PM", "7:55 PM", "8:55 PM", "9:55 PM", "10:55 PM"];
   return (
     <CustomCard>
-      <Flex justify="space-between" align="start">
+      <Flex
+        direction={{ base: "column", md: "row" }}
+        justify="space-between"
+        align="start"
+      >
         {" "}
         <Stack>
           <HStack color="black.80">
@@ -52,13 +56,13 @@ const PriceSection = () => {
             </HStack>
           </HStack>
         </Stack>
-        <HStack>
+        <HStack mt={{base : "2" , md : "0"}}>
           <Button leftIcon={<Icon as={AiFillPlusCircle} />}>Buy</Button>
           <Button leftIcon={<Icon as={AiFillMinusCircle} />}>Sell</Button>
         </HStack>
-      </Flex>
+      </Flex >
       <Tabs variant="soft-rounded">
-        <Flex justify="flex-end">
+        <Flex justify="flex-end"  direction={{ base: "column", md: "row" }} mt={{base : "2" , md : "0"}}>
           <TabList bg="black.5" p="3px">
             {["1H", "1D", "1W", "1M"].map((tab) => (
               <Tab
@@ -75,7 +79,7 @@ const PriceSection = () => {
         </Flex>
         <TabPanels>
           <TabPanel>
-            <Image width="100%" src="/graph.svg" mt="48px" />
+            <Image w="cover" src="/graph.svg" mt="48px" />
             <HStack justify="space-between">
               {timeStamps.map((timestamp) => (
                 <Text key={timestamp} fontSize="sm" color="black.80">

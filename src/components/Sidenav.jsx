@@ -19,7 +19,8 @@ const Sidenav = () => {
       }}
       w={{ base: "full", lg: "16rem" }}
       h="100vh"
-      overflow="auto"
+     
+     
     >
       <Box>
         <Heading textAlign="center" fontSize="20px" as="h1" pt="3.5rem">

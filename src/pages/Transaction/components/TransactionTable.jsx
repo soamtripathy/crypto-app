@@ -6,10 +6,12 @@ import {
   Tr,
   Th,
   Td,
-  TableCaption,
   TableContainer,
   Stack,
   Text,
+  Flex,
+  Tag,
+  Box,
 } from "@chakra-ui/react";
 const TransactionTable = () => {
   const tableData = [
@@ -78,55 +80,79 @@ const TransactionTable = () => {
       status: "completed",
     },
   ];
+  const statusColor = {
+    pending: "#797E82",
+    processing: "#F5A50B",
+    completed: "#059669",
+    cancelled: "#EB5757",
+  };
   return (
-    <TableContainer>
-      <Table variant="simple" colorScheme="gray">
-        <Thead>
-          <Tr>
-            <Th>ID</Th>
-            <Th>Date & Time</Th>
-            <Th>Type</Th>
-            <Th>Amount</Th>
-            <Th>Status</Th>
-          </Tr>
-        </Thead>
-        <Tbody color="p.black">
-          {tableData.map((data) => (
-            <Tr key={data.id}>
-              <Td fontSize="sm" fontWeight="medium">
-                {data.id}
-              </Td>
-              <Td>
-                <Stack spacing="0">
-                  <Text fontSize="sm" fontWeight="medium">
-                    {data.date}
-                  </Text>
-                  <Text fontSize="xs" color="black.40">
-                    {data.time}
-                  </Text>
-                </Stack>
-              </Td>
-              <Td>
-                <Stack spacing="0">
-                  <Text fontSize="sm" fontWeight="medium">
-                    {data.type.name}
-                  </Text>
-                  <Text fontSize="xs" color="black.40">
-                    {data.type?.tag}
-                  </Text>
-                </Stack>
-              </Td>
-              <Td fontSize="sm" fontWeight="medium">
-                {data.amount}
-              </Td>
-              <Td fontSize="sm" fontWeight="medium">
-                {data.status}
-              </Td>
+    <Box > 
+      <TableContainer>
+        <Table
+          variant="striped"
+          colorScheme="gray"
+          size={{ base: "sm", md: "md" }}
+        >
+          <Thead>
+            <Tr>
+              <Th display={{ base: "none", md: "table-cell" }}>ID</Th>
+              <Th>Date & Time</Th>
+              <Th display={{ base: "none", md: "table-cell" }}>Type</Th>
+              {/* <Th>Type</Th> */}
+              <Th>Amount</Th>
+              <Th>Status</Th>
             </Tr>
-          ))}
-        </Tbody>
-      </Table>
-    </TableContainer>
+          </Thead>
+          <Tbody color="p.black">
+            {tableData.map((data) => (
+              <Tr key={data.id}>
+                <Td
+                  fontSize="sm"
+                  fontWeight="medium"
+                  display={{ base: "none", md: "table-cell" }}
+                >
+                  {data.id}
+                </Td>
+                <Td>
+                  <Stack spacing="0">
+                    <Text fontSize="sm" fontWeight="medium">
+                      {data.date}
+                    </Text>
+                    <Text fontSize="xs" color="black.40">
+                      {data.time}
+                    </Text>
+                  </Stack>
+                </Td>
+                <Td display={{ base: "none", md: "table-cell" }}>
+                  <Stack spacing="0">
+                    <Text fontSize="sm" fontWeight="medium">
+                      {data.type.name}
+                    </Text>
+                    <Text fontSize="xs" color="black.40">
+                      {data.type?.tag}
+                    </Text>
+                  </Stack>
+                </Td>
+                <Td fontSize="sm" fontWeight="medium">
+                  {data.amount}
+                </Td>
+                <Td fontSize="sm" fontWeight="medium">
+                  <Tag
+                    bg={statusColor[data.status]}
+                    color="white"
+                    borderRadius="full"
+                  >
+                    {" "}
+                    {data.status}
+                  </Tag>
+                </Td>
+              </Tr>
+            ))}
+          </Tbody>
+        </Table>
+      </TableContainer>
+    </Box>
   );
 };
 
